@@ -1,0 +1,373 @@
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-size: 100%;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	background-color: #0b1e59;
+}
+.home{
+	position: absolute;
+    right: 50px;
+    top: 15px;
+}
+
+/*浮动*/
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+	overflow: hidden;
+}
+
+
+/*去掉百度地图水印*/
+
+.anchorBL {
+	display: none
+}
+
+.header {
+	width: 100%;
+	height: 63px;
+	margin: 0;
+	padding: 0;
+	line-height: 63px;
+	background: url(../img/header_bg.png)repeat-x;
+	color: #fff;
+	border-bottom: 1px solid #22777e;
+	background-color: #0b1e59;
+}
+
+.header_left {
+	margin-left: 50px;
+	background: url(../img/halo.png) no-repeat bottom center;
+	background-size: 80%;
+	font-size: 28px;
+}
+
+.logo {
+	height: 38px;
+	position: relative;
+	top: -2px;
+	right: 10px;
+}
+
+.header_right {
+	float: left;
+	position: absolute;
+	margin-left: 26%;
+}
+
+.header_right ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+.header_right li {
+	float: left;
+	overflow: hidden;
+	line-height: 59px;
+	padding: 0 10px;
+}
+
+.header_right a {
+	width: 100%;
+	text-align: left;
+	color: #fff;
+	cursor: pointer;
+	font-size: 18px;
+	text-decoration: none;
+	padding: 0 20px;
+	border-right: 1px solid rgb(7, 104, 206);
+}
+
+.header_right a:hover {
+	color: #fff;
+}
+
+.header_right img {
+	margin-right: 5px;
+	position: relative;
+}
+.line{
+	color: #fff;
+	font-weight: 700;
+	margin: 0 10px;
+}
+.cur {
+	border-bottom: 4px solid rgb(7, 104, 206);
+	border-radius: 3px;
+}
+
+.cur span {
+	color: #26a2ff;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 124px;
+	display: none;
+}
+
+#map{
+	width: 100%;
+	height: 100%;
+}
+.selectDiv {
+	width: 100%;
+	padding-top: 15px;
+	height: 45px;
+	background: #1862b9;
+}
+
+.inputBox {
+	position: relative;
+}
+.fuceng{
+	border-radius: 5px;
+	background: rgba(255, 255, 255, 0.8);
+	position: absolute;
+}
+.top10{
+	width:220px;
+	left:40px;
+	top:40px;
+	z-index: 2;
+}
+.top20{
+	width: 290px;
+	top: 40px;
+	right: 40px;
+	z-index:5;
+	display:none;
+}
+
+.dai_1 {
+	width: 215px;
+	height: 300px;
+	padding: 10px;
+	background: #fff;
+	position: absolute;
+	margin-top: 1px;
+	z-index: 99;
+	border: 1px solid #C2C2C2;
+	display: none;
+}
+
+.tit {
+	overflow: hidden;
+}
+
+.title {
+	float: left;
+	margin-bottom: 5px;
+	font-weight: 800;
+}
+
+.close {
+	float: right;
+	cursor: pointer;
+}
+
+.shangquan ul {
+	overflow: hidden;
+	padding-left: 1em;
+	margin-bottom: 15px;
+}
+
+.shangquan ul li {
+	float: left;
+	margin-right: 10px;
+	height: 25px;
+	line-height: 25px;
+	padding: 0px 5px;
+}
+
+.shangquan ul li:hover {
+	background: #0175E4;
+	color: #fff;
+	cursor: pointer;
+}
+
+.area {
+	width: 250px !important;
+	margin-left: 40px;
+}
+
+.timePeriod {
+	width: 170px !important;
+}
+
+.layui-input{
+	width: 160px !important;
+}
+
+.paichu {
+	margin-left: 30px;
+	position: relative;
+	top: 3px;
+}
+
+.layui-form-checkbox[lay-skin=primary] span {
+	float: right;
+	padding-right: 15px;
+	line-height: 18px;
+	background: 0 0;
+	color: #fff !important;
+}
+
+.fenxiBtn {
+	display: inline-block;
+	color: #fff;
+	text-align: center;
+	height: 28px;
+	line-height: 28px;
+	border-radius: 2px;
+	width: 90px !important;
+	margin-left: 90px;
+	font-size: 14px;
+	font-weight: 700 !important;
+	background: #26A2FF !important;
+	cursor: pointer;
+}
+
+.dia {
+	background: rgba(255, 255, 255, 0.8);
+	position: absolute;
+	border-radius: 5px;
+}
+
+.layui-collapse,
+.layui-colla-item,
+.layui-colla-content {
+	border: 0 !important;
+}
+
+.layui-colla-title {
+	font-weight: 700;
+	background: orange !important ;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.selectDiv .layui-form-label {
+	color: #fff;
+	font-size: 15px;
+	font-weight: 700 !important;
+}
+
+.sj {
+	margin-right: 8px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 700 !important;
+}
+
+.round_b {
+	display: inline-block;
+	background: #26a1fe;
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	color: #fff;
+	border-radius: 50%;
+	text-align: center;
+	font-size: 8px !important;
+	margin-right: 5px;
+	margin-top: 2px;
+
+
+}
+
+.span_cur {
+	border-bottom: 1px solid #26A2FF;
+	color: #26A2FF;
+}
+
+.layui-input {
+	height: 28px !important;
+}
+
+.spanBox {
+	width: 302px;
+	height: 28px;
+	text-align: center;
+	line-height: 28px;
+	border: 1px solid #fff;
+}
+
+.spanBox span {
+	display: inline-block;
+	width: 100px;
+	height: 29px;
+	color: #fff;
+	cursor: pointer;
+}
+
+.spanBox span:nth-child(2),
+.spanBox span:nth-child(3) {
+	border-left: 1px solid #fff;
+}
+
+.spanBox .span_nav1 {
+	color: #279efc;
+	background: #fff;
+}
+
+.layui-form {
+	margin-left: 40px;
+}
+.bar{
+	display: inline-block;
+	width:100px;
+	height: 4px;
+	position: relative;
+	top:-3px;
+	right:15px;
+}
+.progress{height: inherit;border-radius: 5px;}
+.progress1{width: 92%;background: #b00903;}
+.progress2{width: 90%;background: #b00903;}
+.progress3{width: 89%;background: #b00903;}
+.progress4{width: 87%;background: #f10300;}
+.progress5{width: 85%;background: #f10300;}
+.progress6{width: 80%;background: #f10300;}
+.progress7{width: 75%;background: #f10300;}
+.progress8{width: 72%;background: #f10300;}
+.progress9{width: 69%;background: #f10300;}
+.progress10{width: 65%;background: #f10300;}
+.progress11{width: 63%;background: #fecb00;}
+.progress12{width: 60%;background: #fecb00;}
+.progress13{width: 58%;background: #fecb00;}
+.progress14{width: 57%;background: #fecb00;}
+.progress15{width: 52%;background: #fecb00;}
+.progress16{width: 50%;background: #fecb00;}
+.progress17{width: 46%;background: #34b000;}
+.progress18{width: 44%;background: #34b000;}
+.progress19{width: 30%;background: #34b000;}
+.progress20{width: 25%;background: #34b000;}

@@ -1,0 +1,409 @@
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-size: 100%;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	background-color: #0b1e59;
+}
+
+.home{
+	position: absolute;
+    right: 50px;
+    top: 15px;
+}
+/*浮动*/
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+	overflow: hidden;
+}
+
+
+/*去掉百度地图水印*/
+
+.anchorBL {
+	display: none
+}
+
+.header {
+	width: 100%;
+	height: 63px;
+	margin: 0;
+	padding: 0;
+	line-height: 63px;
+	background: url(../img/header_bg.png)repeat-x;
+	color: #fff;
+	border-bottom: 1px solid #22777e;
+	background-color: #0b1e59;
+}
+
+.header_left {
+	margin-left: 50px;
+	background: url(../img/halo.png) no-repeat bottom center;
+	background-size: 80%;
+	font-size: 28px;
+}
+
+.logo {
+	height: 38px;
+	position: relative;
+	top: -2px;
+	right: 10px;
+}
+
+.header_right {
+	float: left;
+	position: absolute;
+	margin-left: 35%;
+}
+
+.header_right ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+.header_right li {
+	float: left;
+	overflow: hidden;
+	line-height: 59px;
+	padding: 0 10px;
+}
+
+.header_right a {
+	width: 100%;
+	text-align: left;
+	color: #fff;
+	cursor: pointer;
+	font-size: 18px;
+	text-decoration: none;
+	padding: 0 20px;
+	border-right: 1px solid rgb(7, 104, 206);
+}
+
+.header_right a:hover {
+	color: #fff;
+}
+
+.header_right img {
+	margin-right: 5px;
+	position: relative;
+}
+.line{
+	color: #fff;
+	font-weight: 700;
+	margin: 0 10px;
+}
+.cur {
+	border-bottom: 4px solid rgb(7, 104, 206);
+	border-radius: 3px;
+}
+
+.cur span {
+	color: #26a2ff;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 124px;
+}
+
+.page{
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: relative;
+}
+.page1{
+	display: block;
+}
+#map{
+	width: 100%;
+	height: 100%;
+}
+.selectDiv {
+	width: 100%;
+	padding-top: 15px;
+	height: 45px;
+	background: #1862b9;
+}
+
+.inputBox {
+	position: relative;
+}
+.fuceng{
+		width:300px;
+		border-radius: 5px;
+		background: rgba(255, 255, 255, 0.95);
+		position: absolute;
+		z-index: 2;
+	}
+.search{
+	height:43px;
+	background: orange;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.searchInner{
+	padding:15px;
+	height:66px;
+	color:#666;
+	line-height: 22px;
+	border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.searchInput{
+	width:270px !important;
+	margin-left: 5px;
+	margin-top: 8px;;
+}
+.searchBtn{
+	line-height: 28px !important;
+	height:28px !important;
+	position:relative;
+	top:4px;
+}
+.baojing{
+	left:40px;
+	top:240px;
+}
+.searchBox{
+	top:30px;
+	right:40px;
+}
+.chuli{
+	top: 40px;
+	left: 40px;
+}
+.luduan {
+    top: 240px;
+    right: 40px;
+}
+.layui-colla-title {
+    line-height: 42px;
+    padding: 0 15px 0 35px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+    background: !important;
+    font-weight: 700;
+    background: orange !important;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+table{
+	width: 100%;
+	text-align: center;
+	border:none;
+}
+
+.tabTit{
+	margin-left: 6px;
+}
+.tabTit th:nth-child(1){
+	width: 22%;
+}
+.tabTit th:nth-child(3){
+	width: 24%;
+}
+.tabBox{
+	height: 140px !important;
+	margin-left: -10px;
+}
+#table{
+	text-align: center;
+	width: 100%;
+}
+.layui-colla-content {
+    display: none;
+    padding: 15px 15px !important;
+    line-height: 22px;
+    border-top: 1px solid #e2e2e2;
+    color: #666;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#bar{
+	width:100%;
+	height:150px;
+}
+
+.dai_1 {
+	width: 215px;
+	height: 300px;
+	padding: 10px;
+	background: #fff;
+	position: absolute;
+	margin-top: 1px;
+	z-index: 99;
+	border: 1px solid #C2C2C2;
+	display: none;
+}
+
+.tit {
+	overflow: hidden;
+}
+
+.title {
+	float: left;
+	margin-bottom: 5px;
+	font-weight: 800;
+}
+
+.close {
+	float: right;
+	cursor: pointer;
+}
+
+.shangquan ul {
+	overflow: hidden;
+	padding-left: 1em;
+	margin-bottom: 15px;
+}
+
+.shangquan ul li {
+	float: left;
+	margin-right: 10px;
+	height: 25px;
+	line-height: 25px;
+	padding: 0px 5px;
+}
+
+.shangquan ul li:hover {
+	background: #0175E4;
+	color: #fff;
+	cursor: pointer;
+}
+
+.area {
+	width: 250px !important;
+}
+
+.timePeriod {
+	width: 170px !important;
+}
+
+.layui-input{
+	width: 160px !important;
+}
+
+.paichu {
+	margin-left: 30px;
+	position: relative;
+	top: 3px;
+}
+
+.layui-form-checkbox[lay-skin=primary] span {
+	float: right;
+	padding-right: 15px;
+	line-height: 18px;
+	background: 0 0;
+	color: #fff !important;
+}
+
+.fenxiBtn {
+	display: inline-block;
+	color: #fff;
+	text-align: center;
+	height: 28px;
+	line-height: 28px;
+	border-radius: 2px;
+	width: 120px !important;
+	margin-left: 115px;
+	font-size: 14px;
+	font-weight: 700 !important;
+	background: #26A2FF !important;
+	cursor: pointer;
+}
+
+.dia {
+	background: rgba(255, 255, 255, 0.8);
+	position: absolute;
+	border-radius: 5px;
+}
+
+.layui-collapse,
+.layui-colla-item,
+.layui-colla-content {
+	border: 0 !important;
+}
+.selectDiv .layui-form-label {
+	color: #fff;
+	font-size: 15px;
+	font-weight: 700 !important;
+}
+
+.sj {
+	margin-right: 8px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 700 !important;
+}
+
+.round_b {
+	display: inline-block;
+	background: #26a1fe;
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	color: #fff;
+	border-radius: 50%;
+	text-align: center;
+	font-size: 8px !important;
+	margin-right: 5px;
+	margin-top: 2px;
+
+	
+}
+
+.span_cur {
+	border-bottom: 1px solid #26A2FF;
+	color: #26A2FF;
+}
+
+.layui-input {
+	height: 28px !important;
+}
+
+.layui-form {
+	margin-left: 40px;
+}
+.fc {
+    width: 142px;
+    height: 80px;
+    position: absolute;
+    top: 354px;
+    z-index: 99;
+    cursor: pointer;
+	}
+.fc_2{
+	right: 62px;
+}
+.fc_1{
+	right: 204px;
+}

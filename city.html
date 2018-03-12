@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>城市部件精细化管理</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="shortcut icon" href="img/city.png">
+		<link rel="stylesheet" type="text/css" href="css/city.css">
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+		
+	</head>
+
+	<body>
+
+		<div class="header clearfix">
+			<div class="header_left fl">
+				<img class="logo" src="img/city.png" />
+				<span>城市部件精细化管理</span>
+			</div>
+			<div class="header_right fl">
+				<ul>
+					<li class="cur">
+						<a href="index.html">
+							<img src="img/5-on.png" alt="" />
+							<span>井盖监控管理</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/6.png" alt="" />
+							<span>渣土车辆监控管理</span>
+						</a>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/7.png" alt="" />
+							<span>环卫车辆监控管理</span>
+						</a>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<a href="index.html"><img class="home" src="img/home.png"/></a>
+		</div>
+
+		<div class="selectDiv">
+			<form class="layui-form">
+				<div class="layui-inline area">
+					<div class="layui-inline sj">区域</div>
+					<div class="layui-inline inputBox">
+						<input type="text" class="layui-input p1_quyu1" value="西湖周边">
+						<div class="dai_1 p1_dai">
+							<div class="tit">
+								<h4 class="title">热门商圈</h4>
+								<div class="close">x</div>
+							</div>
+							<div class="shangquan">
+								<ul>
+									<li id="nsl">西湖周边</li>
+									<li id="wlgc">武林广场</li>
+								</ul>
+							</div>
+
+							<div class="tit">
+								<h4 class="title">行政区</h4>
+							</div>
+							<div class="shangquan">
+								<ul>
+									<li>杭州市</li>
+								</ul>
+								<ul>
+									<li>上城区</li>
+									<li>下城区</li>
+									<li>西湖区</li>
+									<li>拱墅区</li>
+									<li>江干区</li>
+									<li>滨江区</li>
+									<li>萧山区</li>
+									<li>余杭区</li>
+								</ul>
+							</div>
+
+							<div class="tit">
+								<h4 class="title">机场火车站</h4>
+							</div>
+							<div class="shangquan">
+								<ul>
+									<li>萧山国际机场</li>
+									<li>火车东站</li>
+									<li>杭州南火车站</li>
+									<li>杭州火车站</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layui-inline sj">时间</div>
+				<div class="layui-inline date p1_one">
+					<input type="text" class="layui-input" id="p1_test1" placeholder="请选择时间" value="2017-11-01">
+				</div>
+				<div class="layui-inline">
+					<span class="line">-</span>
+				</div>
+				<div class="layui-inline date p1_two">
+					<input type="text" class="layui-input" id="p1_test2" placeholder="请选择时间" value="2017-11-30">
+				</div>
+				<div class="layui-inline ">
+					<span class="fenxiBtn" id="fenxiBtn">查&nbsp;&nbsp;询</span>
+				</div>
+			</form>
+		</div>
+
+		<div class="container">
+			<div id="map"></div>
+			<div class="fc fc_1"></div>
+			<div class="fc fc_2"></div>
+			<div class="fuceng searchBox">
+				<div class="search">
+					<div class="layui-inline">
+						<input type="text" class="layui-input searchInput" value="00125"  style="width: 220px !important;"/>
+					</div>
+					<div class="layui-inline">
+						<button type="button" class="layui-btn searchBtn layui-btn-primary">搜索</button>
+					</div>
+				</div>
+				<div class="searchInner">
+					<div class="wz">位置：清泰街</div>
+					<div class="zt">状态：报警</div>
+					<div class="yt">用途：污水井盖</div>
+				</div>
+			</div>
+
+			<div class="fuceng baojing">
+				<div class="layui-collapse" lay-accordion="">
+					<div class="layui-colla-item">
+						<h2 class="layui-colla-title">井盖实时报警列表</h2>
+						<div class="layui-colla-content layui-show padl_20">
+							<table class="tabTit">
+								<tr>
+									<th>井盖编号</th>
+									<th>报警原因</th>
+									<th>优先等级</th>
+								</tr>
+							</table>
+							<marquee direction="up" scrollamount="2" onmouseout="this.start()" onmouseover="this.stop()" style="height:100px !important" align="absmiddle">
+								<div class="tabBox">
+									<table id="table">
+										<tr>
+											<td>00125</td>
+											<td>井盖移动</td>
+											<td>一级</td>
+										</tr>
+										<tr>
+											<td>00154</td>
+											<td>污水超警戒线</td>
+											<td>二级</td>
+										</tr>
+										<tr>
+											<td>00135</td>
+											<td>井盖损坏</td>
+											<td>三级</td>
+										</tr>
+										<tr>
+											<td>00186</td>
+											<td>污水超警戒线</td>
+											<td>二级</td>
+										</tr>
+										<tr>
+											<td>00164</td>
+											<td>井盖移动</td>
+											<td>一级</td>
+										</tr>
+										<tr>
+											<td>00158</td>
+											<td>井盖移动</td>
+											<td>一级</td>
+										</tr>
+										<tr>
+											<td>00187</td>
+											<td>井盖移动</td>
+											<td>一级</td>
+										</tr>
+										<tr>
+											<td>00181</td>
+											<td>井盖移动</td>
+											<td>一级</td>
+										</tr>
+										<tr>
+											<td>00182</td>
+											<td>井盖移动</td>
+											<td>一级</td>
+										</tr>
+									</table>
+								</div>
+							</marquee>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="fuceng luduan">
+				<div class="layui-collapse" lay-accordion="">
+					<div class="layui-colla-item">
+						<h2 class="layui-colla-title">井盖频繁故障路段</h2>
+						<div class="layui-colla-content layui-show padl_20">
+							<div id="bar"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="fuceng chuli">
+				<div class="layui-collapse" lay-accordion="">
+					<div class="layui-colla-item">
+						<h2 class="layui-colla-title">井盖报警处理</h2>
+						<div class="layui-colla-content layui-show padl_20">
+							<span>待处理：5&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							<span>处理中：8&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							<span>已处理：165</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+		<script type="text/javascript" src="layui/layui.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+		<script type="text/javascript" src="js/panel.js"></script>
+		<script type="text/javascript" src="js/city.js"></script>
+
+	</body>
+
+</html>

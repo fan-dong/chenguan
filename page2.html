@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>机动车泊车大数据分析</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="shortcut icon" href="img/boche.png">
+		<link rel="stylesheet" type="text/css" href="css/boche.css"/>
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+	</head>
+
+	<body>
+
+		<div class="header clearfix">
+			<div class="header_left fl">
+				<img class="logo" src="img/boche.png" />
+				<span>机动车泊车大数据分析</span>
+			</div>
+			<div class="header_right fl">
+				<ul>
+					<li>
+						<a href="page1.html"><img src="img/1.png" alt="" /><span>停车点效率分析</span></a>
+					</li>
+					<li class="cur">
+						<a href="page2.html"><img src="img/2-on.png" alt="" /><span>道路违停分析</span></a>
+						</a>
+					</li>
+					<li>
+						<a href="page3.html"><img src="img/3.png" alt="" /><span>违停影响因素分析</span></a>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<a href="index.html"><img class="home" src="img/home.png"/></a>
+		</div>
+
+		<div class="selectDiv selectDiv_page2">
+					<form class="layui-form" action="">
+						<div class="layui-inline">
+							<div class="layui-inline sj">区域</div>
+							<div class="layui-inline inputBox">
+								<input type="text" class="layui-input p2_quyu" placeholder="请选择区域" value="滨江区">
+								<div class="dai_1 p2_dai">
+									<div class="tit">
+										<h4 class="title">热门商圈</h4>
+										<div class="close p2_close">x</div>
+									</div>
+									<div class="shangquan">
+										<ul>
+											<li id="bw">滨文路</li>
+											<li id="dx">东信大道</li>
+										</ul>
+									</div>
+
+									<div class="tit">
+										<h4 class="title">行政区</h4>
+									</div>
+									<div class="shangquan">
+										<ul>
+											<li>杭州市</li>
+										</ul>
+										<ul>
+
+											<li>上城区</li>
+											<li>下城区</li>
+											<li>西湖区</li>
+											<li>拱墅区</li>
+											<li>江干区</li>
+											<li>滨江区</li>
+											<li>萧山区</li>
+											<li>余杭区</li>
+										</ul>
+									</div>
+
+									<div class="tit">
+										<h4 class="title">机场火车站</h4>
+									</div>
+									<div class="shangquan">
+										<ul>
+											<li>萧山国际机场</li>
+											<li>火车东站</li>
+											<li>杭州南火车站</li>
+											<li>杭州火车站</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="layui-inline sj">时间</div>
+						<div class="layui-inline date p1_one">
+							<input type="text" class="layui-input" id="p2_test1" placeholder="请选择时间" value="2017-11-01">
+						</div>
+						<div class="layui-inline">
+							<span class="line">-</span>
+						</div>
+						<div class="layui-inline date p1_two" >
+							<input type="text" class="layui-input" id="p2_test2" placeholder="请选择时间" value="2017-11-04">
+						</div>
+
+						<div class="layui-inline ">
+							<span class="fenxiBtn" id="fenxiBtn2">分&nbsp;&nbsp;析</span>
+						</div>
+
+					</form>
+				</div>
+
+		<div class="container">
+			<div class="page" style="display: block;">
+				<div id="page2_chart"></div>
+				<div class="dia dia_2">
+					<div class="layui-collapse" lay-accordion="">
+						<div class="layui-colla-item clearfix">
+							<h2 class="layui-colla-title">按地点分布</h2>
+							<div class="layui-colla-content layui-show clearfix">
+								<div class="fr ddfb">
+									<span class="span_cur ddfb_span1">按区县</span>
+									<span class="ddfb_span2">按商圈/区域</span>
+								</div>
+								<div id="page2_bar_top"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="dia dia_3 ">
+					<div class="layui-collapse" lay-accordion="">
+						<div class="layui-colla-item">
+							<h2 class="layui-colla-title">按时间分布</h2>
+							<div class="layui-colla-content layui-show clearfix">
+								<div class="fr sjfb">
+									<span class="span_cur sjfb_span1">按月</span>
+									<span class="sjfb_span2">按日</span>
+									<span class="sjfb_span3">按时间段</span>
+								</div>
+
+								<div id="page2_bar_bottom"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="dia dia_4 ">
+					<div class="layui-collapse" lay-accordion="">
+						<div class="layui-colla-item">
+							<h2 class="layui-colla-title">违停区TOP10</h2>
+							<div class="layui-colla-content layui-show padl_20">
+								<ol class="youxu wtqu">
+									<li><span>东信大道</span><span>56单</span></li>
+
+									<li><span>武警医院</span><span>55单</span></li>
+
+									<li><span>文耀大厦</span><span>50单</span></li>
+
+									<li><span>杭州医学院</span><span>46单</span></li>
+
+									<li><span>华盛达广场</span><span>45单</span></li>
+
+									<li><span>西兴</span><span>30单</span></li>
+
+									<li><span>滨安路</span><span>28单</span></li>
+
+									<li><span>江南大道</span><span>25单</span></li>
+
+									<li><span>星光大道</span><span>20单</span></li>
+
+									<li><span>滨文路</span><span>18单</span></li>
+
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--<div class="dia dia_5 ">
+					<div class="layui-collapse" lay-accordion="">
+						<div class="layui-colla-item">
+							<h2 class="layui-colla-title">违停点TOP10</h2>
+							<div class="layui-colla-content layui-show padl_20">
+								<ol class="youxu wtqu">
+									<li><span>中医药大学</span><span>15单</span></li>
+
+									<li><span>华盛达广场</span><span>14单</span></li>
+
+									<li><span>彩虹城</span><span>10单</span></li>
+
+									<li><span>长江小区</span><span>9单</span></li>
+
+									<li><span>长江小区</span><span>7单</span></li>
+
+									<li><span>华业大厦</span><span>7单</span></li>
+
+									<li><span>华润万家</span><span>6单</span></li>
+
+									<li><span>中兴立交</span><span>5单</span></li>
+
+									<li><span>之江花园</span><span>4单</span></li>
+
+									<li><span>海威大厦</span><span>3单</span></li>
+
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>-->
+
+		</div>
+
+		<script type="text/javascript" src="layui/layui.js"></script>
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+		<script type="text/javascript" src="js/bmap.min.js"></script>
+		<script type="text/javascript" src="js/panel.js" ></script>
+		<script type="text/javascript" src="js/page2.js" ></script>
+		<script type="text/javascript" src="js/page2_chart.js" ></script>
+		<script type="text/javascript" src="js/page2_bar_top.js" ></script>
+		<script type="text/javascript" src="js/page2_bar_bottom.js" ></script>
+	</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>机动车泊车大数据分析</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="shortcut icon" href="img/boche.png">
+		<link rel="stylesheet" type="text/css" href="css/boche.css" />
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+	</head>
+
+	<body>
+
+		<div class="header clearfix">
+			<div class="header_left fl">
+				<img class="logo" src="img/boche.png" />
+				<span>机动车泊车大数据分析</span>
+			</div>
+			<div class="header_right fl">
+				<ul>
+					<li>
+						<a href="page1.html"><img src="img/1.png" alt="" /><span>停车点效率分析</span></a>
+					</li>
+					<li>
+						<a href="page2.html"><img src="img/2.png" alt="" /><span>道路违停分析</span></a>
+						</a>
+					</li>
+					<li class="cur">
+						<a href="page3.html"><img src="img/3-on.png" alt="" /><span>违停影响因素分析</span></a>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<a href="index.html"><img class="home" src="img/home.png"/></a>
+		</div>
+
+		<div class="selectDiv">
+		<form class="layui-form">
+			<div class="layui-inline">
+				<div class="layui-inline sj">区域</div>
+				<div class="layui-inline inputBox">
+					<input type="text" class="layui-input p3_quyu" placeholder="请选择区域" value="杭州火车站">
+					<div class="dai_1 p3_dai">
+						<div class="tit">
+							<h4 class="title">热门商圈</h4>
+							<div class="close p3_close">x</div>
+						</div>
+						<div class="shangquan">
+							<ul>
+								<li id="bw">滨文路</li>
+								<li id="dx">东信大道</li>
+							</ul>
+						</div>
+
+						<div class="tit">
+							<h4 class="title">行政区</h4>
+						</div>
+						<div class="shangquan">
+							<ul>
+								<li>杭州市</li>
+							</ul>
+							<ul>
+
+								<li>上城区</li>
+								<li>下城区</li>
+								<li>西湖区</li>
+								<li>拱墅区</li>
+								<li>江干区</li>
+								<li>滨江区</li>
+								<li>萧山区</li>
+								<li>余杭区</li>
+							</ul>
+						</div>
+
+						<div class="tit">
+							<h4 class="title">机场火车站</h4>
+						</div>
+						<div class="shangquan">
+							<ul>
+								<li>萧山国际机场</li>
+								<li>火车东站</li>
+								<li>杭州南火车站</li>
+								<li>杭州火车站</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="layui-inline sj">时间</div>
+			<div class="layui-inline date p1_one">
+				<input type="text" class="layui-input" id="p3_test1" placeholder="请选择时间" value="2017-11-01">
+			</div>
+			<div class="layui-inline">
+				<span class="line">-</span>
+			</div>
+			<div class="layui-inline date p1_two">
+				<input type="text" class="layui-input" id="p3_test2" placeholder="请选择时间" value="2017-11-30">
+			</div>
+
+			<div class="layui-inline ">
+				<span class="fenxiBtn" id="fenxiBtn3">分&nbsp;&nbsp;析</span>
+			</div>
+
+		</form>
+	</div>
+		<div class="container">
+			<div id="page3_chart"></div>
+		</div>
+
+		<script type="text/javascript" src="layui/layui.js"></script>
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+		<script type="text/javascript" src="js/bmap.min.js"></script>
+		<script type="text/javascript" src="js/page3.js"></script>
+	</body>
+
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>共享单车停放管理</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="shortcut icon" href="img/bike.png">
+		<link rel="stylesheet" type="text/css" href="css/bike.css" />
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+
+	</head>
+
+	<body>
+
+		<div class="header clearfix">
+			<div class="header_left fl">
+				<img class="logo" src="img/bike.png" />
+				<span>共享单车停放管理</span>
+			</div>
+			<div class="header_right fl">
+				<ul>
+					<li class="cur">
+						<a href="index.html">
+							<img src="img/1-on.png" alt="" />
+							<span>单车停放监管</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/2.png" alt="" />
+							<span>单车使用情况分析</span>
+						</a>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/3.png" alt="" />
+							<span>车辆投放量评估</span>
+						</a>
+						</a>
+					</li>
+					<li>
+						<a href="#" style="border:none">
+							<img src="img/4.png" alt="" />
+							<span>电子围栏管理</span>
+						</a>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<a href="index.html"><img class="home" src="img/home.png"/></a>
+		</div>
+
+		<div class="selectDiv">
+			<form class="layui-form" action="">
+				<div class="layui-inline">
+					<input type="checkbox" name="" lay-skin="primary" lay-filter="wl" title="现有电子围栏" checked>
+					<input type="checkbox" name="" lay-skin="primary" lay-filter="rl" title="停放热力图">
+					<input type="checkbox" name="" lay-skin="primary" lay-filter="jh" title="违停聚合图">
+				</div>
+				
+				<div class="layui-inline area">
+					<div class="layui-inline sj">区域</div>
+					<div class="layui-inline inputBox">
+						<input type="text" class="layui-input p1_quyu1" placeholder="请选择区域" value="西湖周边">
+						<div class="dai_1 p1_dai">
+							<div class="tit">
+								<h4 class="title">热门商圈</h4>
+								<div class="close">x</div>
+							</div>
+							<div class="shangquan">
+								<ul>
+									<li id="nsl">南山路</li>
+									<li id="wlgc">武林广场</li>
+								</ul>
+							</div>
+
+							<div class="tit">
+								<h4 class="title">行政区</h4>
+							</div>
+							<div class="shangquan">
+								<ul>
+									<li>杭州市</li>
+								</ul>
+								<ul>
+									<li>上城区</li>
+									<li>下城区</li>
+									<li>西湖区</li>
+									<li>拱墅区</li>
+									<li>江干区</li>
+									<li>滨江区</li>
+									<li>萧山区</li>
+									<li>余杭区</li>
+								</ul>
+							</div>
+
+							<div class="tit">
+								<h4 class="title">机场火车站</h4>
+							</div>
+							<div class="shangquan">
+								<ul>
+									<li>萧山国际机场</li>
+									<li>火车东站</li>
+									<li>杭州南火车站</li>
+									<li>杭州火车站</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="layui-inline sj">时间</div>
+				<div class="layui-inline date p1_one">
+					<input type="text" class="layui-input" id="p1_test1" placeholder="请选择时间" value="2017-11-01">
+				</div>
+				<div class="layui-inline">
+					<span class="line">-</span>
+				</div>
+				<div class="layui-inline date p1_two">
+					<input type="text" class="layui-input" id="p1_test2" placeholder="请选择时间" value="2017-11-04">
+				</div>
+				<div class="layui-inline ">
+					<span class="fenxiBtn" id="fenxiBtn4">分&nbsp;&nbsp;析</span>
+				</div>
+			</form>
+		</div>
+
+		<div class="container">
+			<div id="map"></div>
+			<div class="fuceng top20">
+				<div class="layui-collapse" lay-accordion="">
+					<div class="layui-colla-item">
+						<h2 class="layui-colla-title">违停区域Top15</h2>
+						<div class="layui-colla-content layui-show padl_20">
+							<ul>
+								<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">1</span>
+										<span class="name">柳浪闻莺公园</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress1"></div>
+										</div>
+										<span class="num">92</span>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">2</span>
+										<span class="name">浙江大酒店</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress2"></div>
+										</div>
+										<span class="num">90</span>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">3</span>
+										<span class="name">庆春立交桥</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress3"></div>
+										</div>
+										<span class="num">89</span>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">4</span>
+										<span class="name">广利大厦</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress4"></div>
+										</div>
+										<span class="num">87</span>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">5</span>
+										<span class="name">仙林大厦</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress5"></div>
+										</div>
+										<span class="num">85</span>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">6</span>
+										<span class="name">庆华饭店</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress6"></div>
+										</div>
+										<span class="num">80</span>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">7</span>
+										<span class="name">吴山天凤</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress7"></div>
+										</div>
+										<span class="num">75</span>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">8</span>
+										<span class="name">银泰百货</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress8"></div>
+										</div>
+										<span class="num">72</span>
+									</div>
+								</li>
+
+								<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">9</span>
+										<span class="name">平海路</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress9"></div>
+										</div>
+										<span class="num">69</span>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">10</span>
+										<span class="name">鼓楼</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress10"></div>
+										</div>
+										<span class="num">65</span>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">11</span>
+										<span class="name">建国北路</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress11"></div>
+										</div>
+										<span class="num">63</span>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">12</span>
+										<span class="name">标力大厦</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress12"></div>
+										</div>
+										<span class="num">60</span>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">13</span>
+										<span class="name">武林广场</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress13"></div>
+										</div>
+										<span class="num">58</span>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">14</span>
+										<span class="name">华润万家</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress14"></div>
+										</div>
+										<span class="num">57</span>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">15</span>
+										<span class="name">保淑路</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress15"></div>
+										</div>
+										<span class="num">52</span>
+									</div>
+								</li>
+								<!--<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">16</span>
+										<span class="name">雷峰夕照</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress16"></div>
+										</div>
+										<span class="num">50</span>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">17</span>
+										<span class="name">瑞丰国际</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress17"></div>
+										</div>
+										<span class="num">46</span>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">18</span>
+										<span class="name">环球中心</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress18"></div>
+										</div>
+										<span class="num">44</span>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">19</span>
+										<span class="name">宁波大厦</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress19"></div>
+										</div>
+										<span class="num">30</span>
+									</div>
+								</li>
+								<li class="clearfix">
+									<div class="fl">
+										<span class="round_b">20</span>
+										<span class="name">华浙广场</span>
+									</div>
+									<div class="fr">
+										<div class="bar">
+											<div class="progress progress20"></div>
+										</div>
+										<span class="num">25</span>
+									</div>
+								</li>
+							</ul>-->
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="fuceng top10">
+					<div class="layui-collapse" lay-accordion="">
+						<div class="layui-colla-item">
+							<h2 class="layui-colla-title">电子围栏最大停车量Top10</h2>
+							<div class="layui-colla-content layui-show padl_20">
+								<ul>
+									<li class="clearfix">
+										<span class="round_b fl">1</span>
+										<span class="fl">古涌金门</span>
+										<span class="fr">180</span>
+									</li>
+									<li class="clearfix">
+										<span class="round_b fl">2</span>
+										<span class="fl">方正证券</span>
+										<span class="fr">160</span>
+									</li>
+									<li class="clearfix">
+										<span class="round_b fl">3</span>
+										<span class="fl">武林广场</span>
+										<span class="fr">120</span>
+									</li>
+									<li class="clearfix">
+										<span class="round_b fl">4</span>
+										<span class="fl">杭州大酒店</span>
+										<span class="fr">109</span>
+									</li>
+									<li class="clearfix">
+										<span class="round_b fl">5</span>
+										<span class="fl">杭州百货大楼</span>
+										<span class="fr">100</span>
+									</li>
+									<li class="clearfix">
+										<span class="round_b fl">6</span>
+										<span class="fl">标力大厦</span>
+										<span class="fr">88</span>
+									</li>
+									<li class="clearfix">
+										<span class="round_b fl">7</span>
+										<span class="fl">新天龙商厦</span>
+										<span class="fr">70</span>
+									</li>
+									<li class="clearfix">
+										<span class="round_b fl">8</span>
+										<span class="fl">雅戈尔大厦</span>
+										<span class="fr">65</span>
+									</li>
+									<li class="clearfix">
+										<span class="round_b fl">9</span>
+										<span class="fl">杭州农业局</span>
+										<span class="fr">55</span>
+									</li>
+									<li class="clearfix">
+										<span class="round_b fl">10</span>
+										<span class="fl">陆记饭庄</span>
+										<span class="fr">40</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="layui/layui.js"></script>
+		<script type="text/javascript" src="js/echarts.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/library/CurveLine/1.5/src/CurveLine.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/library/TextIconOverlay/1.2/src/TextIconOverlay_min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/library/MarkerClusterer/1.2/src/MarkerClusterer_min.js"></script>
+		<script type="text/javascript" src="js/bmap.min.js"></script>
+		<script type="text/javascript" src="js/panel.js"></script>
+		<script type="text/javascript" src="js/bike.js"></script>
+
+
+	</body>
+
+</html>
